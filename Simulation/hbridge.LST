@@ -1,0 +1,54 @@
+C51 COMPILER V6.23a  HBRIDGE                                                               03/23/2011 11:50:51 PAGE 1   
+
+
+C51 COMPILER V6.23a, COMPILATION OF MODULE HBRIDGE
+OBJECT MODULE PLACED IN hbridge.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE hbridge.c BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          #include<at89x51.h>
+   2          void delay();
+   3          int i,j;
+   4          main()
+   5          {
+   6   1      P2=0x00;
+   7   1      while(1)
+   8   1      {
+   9   2      if(P1_0 ==0)
+  10   2      P2_0 = 1;
+  11   2      else if(P1_1 ==0)
+  12   2      P2_1 = 1;
+  13   2      else if(P1_0 == 0 && P1_1==0)
+  14   2      {
+  15   3      P2_0 = 1;
+  16   3      P2_1 = 1;
+  17   3      }
+  18   2      else
+  19   2      {
+  20   3      P2_0 = 0;
+  21   3      P2_1 = 0;
+  22   3      delay();
+  23   3      }
+  24   2      }
+  25   1      }
+  26          
+  27          void delay()
+  28          {
+  29   1      for(i=0;i<=500;i++)
+  30   1      for(j=0;j<=300;j++);
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     81    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      4    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
